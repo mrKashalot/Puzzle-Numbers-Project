@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TilePoint2.swift
 //  Puzzle Numbers
 //
 //  Created by Владислав on 19.01.2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TilePoint2: UIViewController {
     
     @IBOutlet weak var gameView: UIView!
     @IBOutlet weak var timerLabel: UILabel!
@@ -31,11 +31,8 @@ class ViewController: UIViewController {
     //пустое место нашего отсутствующего блока!
     var emptyBlock: CGPoint!
     
-    let makeSoundButton = SimpleSound(named: "chik")
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //вызов функции производящей блоки!
         makeBlocks()
         //вызов функции рандомайз
@@ -50,7 +47,7 @@ class ViewController: UIViewController {
         centerArray = []
         
         gameViewWidth = gameView.frame.size.width //при загрузке нашего игрового поля - мы обозначаемпараметры
-        blockWidth = gameViewWidth / 4 //делаем ширину блока лейб на ширину игрового поля чтоб ровно влезало
+        blockWidth = gameViewWidth / 2 //делаем ширину блока лейб на ширину игрового поля чтоб ровно влезало
         
         xCen = blockWidth / 2
         yCen = blockWidth / 2
@@ -58,15 +55,15 @@ class ViewController: UIViewController {
         var labelNumber: Int = 1 //значение которое должен показывать блок
         
         //данный цикл повторяет отрисовку цикла из 4 лейбл по вертикали для отрисовки по горизонтали
-        for v in 0 ..< 4
+        for v in 0 ..< 2
         {
             //задаем цикл при котором горизонтально блок будет дублироваться вправо пока не дойдет до края или не получит значение в притык к 4
-            for h in 0 ..< 4
+            for h in 0 ..< 2
             {
                 //параметры рамки блока лейбл
                 let blockFrame: CGRect = CGRect(x: 0, y: 0, width: blockWidth - 4, height: blockWidth - 4) //ставим минус 4 потому что хотим отступы и зазоры между блокам лейбл
                 //добавляем лейбл кодом!
-                let block: MyLabel = MyLabel(frame: blockFrame)
+                let block: MyLabel16 = MyLabel16(frame: blockFrame)
                 
                 block.isUserInteractionEnabled = true //для восприятия жестов
                 
@@ -82,10 +79,10 @@ class ViewController: UIViewController {
                 labelNumber += 1 //добавляем значение + 1 к начальному что бы получился порядой! от 1 до 20
                 
                 block.textAlignment = NSTextAlignment.center //задаем положение текста!
-                block.font = UIFont(name: "DIN Condensend Bold", size: 45) //задаем шрифт и размер цифр в лейбл блоках
-                block.textColor = UIColor.white
+                block.font = UIFont(name: "DIN Alternate Bold", size: 20) //задаем шрифт и размер цифр в лейбл блоках
+                block.textColor = UIColor.black
                 
-                block.backgroundColor = UIColor.blue //задаем цвет нашего лейбл
+                block.backgroundColor = UIColor.red //задаем цвет нашего лейбл
                 gameView.addSubview(block) //помещаем наше вью на игровое саб вью
                 
                 blocksArray.add(block) //добавляем блоки в массив!
@@ -96,9 +93,9 @@ class ViewController: UIViewController {
             yCen = yCen + blockWidth
         }
         //удаляем последний блок из массива - блоков всего хоти от 0 до 15 без 16
-        let lastMoveBlock: MyLabel = blocksArray[15] as! MyLabel
+        let lastMoveBlock: MyLabel2 = blocksArray[4] as! MyLabel2
         lastMoveBlock.removeFromSuperview() //удаляем блок с супервью
-        blocksArray.removeObject(at: 15)
+        blocksArray.removeObject(at: 4)
     }
     
     //делаем рандом положения лейбл блоков (берем значения центрирования лейблов и адаем рандом)
@@ -111,17 +108,14 @@ class ViewController: UIViewController {
             let randomIndex: Int = Int(arc4random()) % tempCenterArray.count
             let randomCenter: CGPoint = tempCenterArray[randomIndex] as! CGPoint
             
-            (anyBlockArray as! MyLabel).center = randomCenter
+            (anyBlockArray as! MyLabel2).center = randomCenter
             tempCenterArray.removeObject(at: randomIndex) //задаем что бы не пропадали блоки!
         }
         
-        emptyBlock = tempCenterArray[0] as! CGPoint //позволяе сохрнаять блок и не удалять его - присваиваем ему статус индекса 0 в массиве
+        emptyBlock = tempCenterArray[0] as? CGPoint //позволяе сохрнаять блок и не удалять его - присваиваем ему статус индекса 0 в массиве
     }
     
     @IBAction func resetButtonPress(_ sender: Any) {
-        
-        makeSoundButton.play()
-        
         //запускаем рандомайзер еще раз рандомайзер!
         randomizeAction()
         
@@ -144,7 +138,7 @@ class ViewController: UIViewController {
         if (blocksArray.contains(playerTouch.view as Any)) {
             
             
-            let touchView: MyLabel = (playerTouch.view) as! MyLabel
+            let touchView: MyLabel2 = (playerTouch.view) as! MyLabel2
             //логика сдвига лейбл блока в пустой центр лейбл блока
             let xDiffrnt: CGFloat = touchView.center.x - emptyBlock.x
             let yDiffrent: CGFloat = touchView.center.y - emptyBlock.y
@@ -163,7 +157,7 @@ class ViewController: UIViewController {
                 if (touchView.OriginalCenter == emptyBlock) {
                     touchView.backgroundColor = UIColor.green
                 } else {
-                    touchView.backgroundColor = UIColor.blue
+                    touchView.backgroundColor = UIColor.darkGray
                 }
                 
                 touchView.center = emptyBlock
@@ -173,8 +167,9 @@ class ViewController: UIViewController {
         }
     }
 }
+
+
 //отвечает за ориганильное местоположение лейбл блока! необходима для смены цвета в исходное положение
-class MyLabel: UILabel {
+class MyLabel2: UILabel {
     var OriginalCenter: CGPoint!
 }
-

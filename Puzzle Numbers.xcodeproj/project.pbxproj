@@ -14,6 +14,15 @@
 		867A5E3025B707320095B0AD /* Puzzle_Numbers.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 867A5E2E25B707320095B0AD /* Puzzle_Numbers.xcdatamodeld */; };
 		867A5E3225B707340095B0AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 867A5E3125B707340095B0AD /* Assets.xcassets */; };
 		867A5E3525B707340095B0AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 867A5E3325B707340095B0AD /* LaunchScreen.storyboard */; };
+		867A5E4525B73D080095B0AD /* TilePoint6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867A5E4425B73D080095B0AD /* TilePoint6ViewController.swift */; };
+		867A5E5025B74B5F0095B0AD /* TilePoint16.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867A5E4F25B74B5F0095B0AD /* TilePoint16.swift */; };
+		867A5E5425B74FAA0095B0AD /* TilePoint2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867A5E5325B74FAA0095B0AD /* TilePoint2.swift */; };
+		867DA15525B8674100431203 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867DA15425B8674100431203 /* MenuViewController.swift */; };
+		867DA15925B869BA00431203 /* SimpleSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867DA15825B869BA00431203 /* SimpleSound.swift */; };
+		867DA15C25B86A1000431203 /* chik.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 867DA15B25B86A1000431203 /* chik.m4a */; };
+		86DEFC2D25B7553600929513 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DEFC2C25B7553600929513 /* ButtonStyle.swift */; };
+		86DEFC3025B7555100929513 /* LabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DEFC2F25B7555100929513 /* LabelStyle.swift */; };
+		86DEFC3325B755F700929513 /* ViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DEFC3225B755F700929513 /* ViewStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +35,15 @@
 		867A5E3125B707340095B0AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		867A5E3425B707340095B0AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		867A5E3625B707340095B0AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		867A5E4425B73D080095B0AD /* TilePoint6ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TilePoint6ViewController.swift; sourceTree = "<group>"; };
+		867A5E4F25B74B5F0095B0AD /* TilePoint16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TilePoint16.swift; sourceTree = "<group>"; };
+		867A5E5325B74FAA0095B0AD /* TilePoint2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TilePoint2.swift; sourceTree = "<group>"; };
+		867DA15425B8674100431203 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		867DA15825B869BA00431203 /* SimpleSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSound.swift; sourceTree = "<group>"; };
+		867DA15B25B86A1000431203 /* chik.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = chik.m4a; sourceTree = "<group>"; };
+		86DEFC2C25B7553600929513 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		86DEFC2F25B7555100929513 /* LabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelStyle.swift; sourceTree = "<group>"; };
+		86DEFC3225B755F700929513 /* ViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +57,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8652642125E7CA5D009C228F /* Custom Detail */ = {
+			isa = PBXGroup;
+			children = (
+				86DEFC2C25B7553600929513 /* ButtonStyle.swift */,
+				86DEFC3225B755F700929513 /* ViewStyle.swift */,
+				86DEFC2F25B7555100929513 /* LabelStyle.swift */,
+			);
+			path = "Custom Detail";
+			sourceTree = "<group>";
+		};
+		8652642225E7CA84009C228F /* TileDetail */ = {
+			isa = PBXGroup;
+			children = (
+				867A5E4F25B74B5F0095B0AD /* TilePoint16.swift */,
+				867A5E4425B73D080095B0AD /* TilePoint6ViewController.swift */,
+				867A5E5325B74FAA0095B0AD /* TilePoint2.swift */,
+			);
+			path = TileDetail;
+			sourceTree = "<group>";
+		};
 		867A5E1925B707320095B0AD = {
 			isa = PBXGroup;
 			children = (
@@ -58,10 +96,15 @@
 		867A5E2425B707320095B0AD /* Puzzle Numbers */ = {
 			isa = PBXGroup;
 			children = (
+				8652642225E7CA84009C228F /* TileDetail */,
+				8652642125E7CA5D009C228F /* Custom Detail */,
 				867A5E2525B707320095B0AD /* AppDelegate.swift */,
 				867A5E2725B707320095B0AD /* SceneDelegate.swift */,
 				867A5E2925B707320095B0AD /* ViewController.swift */,
 				867A5E2B25B707320095B0AD /* Main.storyboard */,
+				867DA15825B869BA00431203 /* SimpleSound.swift */,
+				867DA15B25B86A1000431203 /* chik.m4a */,
+				867DA15425B8674100431203 /* MenuViewController.swift */,
 				867A5E3125B707340095B0AD /* Assets.xcassets */,
 				867A5E3325B707340095B0AD /* LaunchScreen.storyboard */,
 				867A5E3625B707340095B0AD /* Info.plist */,
@@ -130,6 +173,7 @@
 				867A5E3525B707340095B0AD /* LaunchScreen.storyboard in Resources */,
 				867A5E3225B707340095B0AD /* Assets.xcassets in Resources */,
 				867A5E2D25B707320095B0AD /* Main.storyboard in Resources */,
+				867DA15C25B86A1000431203 /* chik.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,10 +184,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				867A5E4525B73D080095B0AD /* TilePoint6ViewController.swift in Sources */,
+				86DEFC2D25B7553600929513 /* ButtonStyle.swift in Sources */,
 				867A5E3025B707320095B0AD /* Puzzle_Numbers.xcdatamodeld in Sources */,
+				867DA15925B869BA00431203 /* SimpleSound.swift in Sources */,
+				867A5E5425B74FAA0095B0AD /* TilePoint2.swift in Sources */,
+				867DA15525B8674100431203 /* MenuViewController.swift in Sources */,
 				867A5E2A25B707320095B0AD /* ViewController.swift in Sources */,
 				867A5E2625B707320095B0AD /* AppDelegate.swift in Sources */,
 				867A5E2825B707320095B0AD /* SceneDelegate.swift in Sources */,
+				86DEFC3025B7555100929513 /* LabelStyle.swift in Sources */,
+				86DEFC3325B755F700929513 /* ViewStyle.swift in Sources */,
+				867A5E5025B74B5F0095B0AD /* TilePoint16.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
